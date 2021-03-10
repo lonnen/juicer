@@ -28,11 +28,29 @@ body {
 }
 
 .board {
-  background-color: var(--current-line);
-  color: var(--comment);
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 80vw;
-  height: 80vw;
-  margin: 5vw;
+  width: 88vw;
+  height: 88vw;
+  margin: 1vw;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.board div {
+  background-color: var(--current-line);
+  color: var(--comment);
+}
+
+.board div:nth-child(-2n+8),
+.board div:nth-child(8) ~ div:nth-child(-2n+15),
+.board div:nth-child(16) ~ div:nth-child(-2n+24),
+.board div:nth-child(24) ~ div:nth-child(-2n+31),
+.board div:nth-child(32) ~ div:nth-child(-2n+40),
+.board div:nth-child(40) ~ div:nth-child(-2n+47),
+.board div:nth-child(48) ~ div:nth-child(-2n+56),
+.board div:nth-child(56) ~ div:nth-child(-2n+63) {
+  background-color: var(--comment);
+  color: var(--current-line);
 }
