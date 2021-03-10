@@ -24,6 +24,15 @@ body {
   color: var(--foreground);
   font-family: var(--main-font-family);
   margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  padding: 5vw;
+}
+
+.board {
+  background-color: var(--current-line);
+  color: var(--comment);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 80vw;
+  height: 80vw;
+  margin: 5vw;
 }
