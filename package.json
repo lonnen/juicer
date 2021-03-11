@@ -1,6 +1,6 @@
 {
   "name": "juicer",
-  "productName": "juicer",
+  "productName": "Juicer",
   "version": "0.0.1",
   "description": "a PGN based chess game annotation tool",
   "main": "src/index.js",

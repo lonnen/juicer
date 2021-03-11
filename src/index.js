@@ -30,12 +30,97 @@ const createWindow = () => {
 };
 
 // build the application menu items
-const template = [];
+const template = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Open File',
+        async click() {
+          const { cancelled, filePaths } = await dialog.showOpenDialog({
+            title: 'Open File',
+            buttonLabel: 'Open',
+            properties: ['openFile']
+          });
+          if (!cancelled && filePaths.length > 0) {
+            browserWindow.webContents.send('openFile', filePaths[0]);
+          }
+        }
+      },
+    ]
+  },
+  {
+    label: 'View',
+    submenu: [
+      { role: 'reload' },
+      { role: 'forcereload' },
+      { role: 'toggledevtools' },
+      { type: 'separator' },
+      { role: 'resetzoom' },
+      { role: 'zoomin' },
+      { role: 'zoomout' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' },
+    ],
+  },
+  {
+    label: 'Window',
+    submenu: [
+      { role: 'minimize' },
+      { role: 'close' },
+    ],
+  },
+  {
+    role: 'help',
+    submenu: [
+      {
+        label: 'Learn More',
+        click() {
+          shell.openExternal('https://github.com/Lonnen/juicer');
+        },
+      },
+    ],
+  },
+];
 
 if (process.platform === 'darwin') {
 
-} else {
+  template.unshift({
+    label: 'Juicer',
+    submenu: [
+      { role: 'about' },
+      { type: 'separator' },
+      // { type: 'preferences' },
+      // { type: 'separator' },
+      { role: 'services', submenu: [] },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideOthers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' },
+    ],
+  });
 
+  template[3].submenu = [
+    { role: 'close' },
+    { role: 'minimize' },
+    { role: 'zoom' },
+    { type: 'separator' },
+    {
+      label: 'Main Window',
+      accelerator: 'cmd+1',
+      click() {
+        if (browserWindow) {
+          browserWindow.focus();
+        } else {
+          createWindow();
+        }
+      },
+    },
+  ];
+} else {
+  template[0].submenu.push({ role: 'quit' });
 }
 
 const menu = Menu.buildFromTemplate(template);
