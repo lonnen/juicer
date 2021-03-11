@@ -124,6 +124,7 @@ if (process.platform === 'darwin') {
 }
 
 const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
 // END menu items
 
 // This method will be called when Electron has finished
