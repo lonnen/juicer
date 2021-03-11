@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const path = require('path');
 
@@ -28,6 +28,18 @@ const createWindow = () => {
 
   mainWindowState.manage(browserWindow);
 };
+
+// build the application menu items
+const template = [];
+
+if (process.platform === 'darwin') {
+
+} else {
+
+}
+
+const menu = Menu.buildFromTemplate(template);
+// END menu items
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
