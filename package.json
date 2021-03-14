@@ -17,11 +17,13 @@
   },
   "license": "MIT",
   "build": {
-    "fileAssociations": [{
-      "ext": "pgn",
-      "name": "Portable Game Notation file",
-      "role": "Editor"
-    }]
+    "fileAssociations": [
+      {
+        "ext": "pgn",
+        "name": "Portable Game Notation file",
+        "role": "Editor"
+      }
+    ]
   },
   "config": {
     "forge": {
