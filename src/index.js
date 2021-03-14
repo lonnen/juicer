@@ -57,6 +57,23 @@ const template = [
           }
         }
       },
+      { type: 'separator' },
+      {
+        label: 'Save File',
+        accelerator: "CommandOrControl+S",
+        async click() {
+          console.log('unimplemented');
+        }
+      },
+      {
+        label: 'Save As...',
+        accelerator: "Shift+CommandOrControl+S",
+        async click() {
+          console.log('unimplemented');
+        }
+      },
+      { type: 'separator' },
+      { role: 'close' },
     ]
   },
   {
