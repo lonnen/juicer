@@ -22,7 +22,10 @@ const createWindow = () => {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
-
+    webPreferences: {
+      contextIsolation: false,
+      nodeIntegration: true,
+    }
   });
 
   browserWindow.loadFile(path.join(__dirname, 'index.html'));
