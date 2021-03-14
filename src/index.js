@@ -1,4 +1,5 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, dialog, Menu } = require('electron');
+const fs = require('fs');
 const windowStateKeeper = require('electron-window-state');
 const path = require('path');
 
@@ -40,10 +41,15 @@ const template = [
           const { cancelled, filePaths } = await dialog.showOpenDialog({
             title: 'Open File',
             buttonLabel: 'Open',
-            properties: ['openFile']
+            properties: ['openFile'],
+            filters: [
+              { name: 'Player Game Notation Files', extensions: ['pgn'] }
+            ]
           });
           if (!cancelled && filePaths.length > 0) {
-            browserWindow.webContents.send('openFile', filePaths[0]);
+              const file = filePaths[0];
+              const content = fs.readFileSync(file).toString();
+              browserWindow.webContents.send('openFile', file, content);
           }
         }
       },
