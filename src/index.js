@@ -40,6 +40,7 @@ const template = [
     submenu: [
       {
         label: 'Open File',
+        accelerator: 'Shift+CommandOrControl+O',
         async click() {
           const { cancelled, filePaths } = await dialog.showOpenDialog({
             title: 'Open File',
