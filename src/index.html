@@ -7,16 +7,87 @@
     <script src="content.js"></script>
   </head>
   <body>
-    <h1>Juicer</h1>
-    <div class="board">
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <header>
+      <!-- these seven tags are required -->
+      :Event
+      :Site
+      :Date
+      :Round
+      <!-- Player playing white -->
+      <!-- Player playing black -->
+      :Result
+      <!-- these are optional -->
+      :Annotator
+      :PlyCount <!--  -->
+      :TimeControl <!-- formats are weird for OTB, otherwise moves/seconds:bonus -->
+      :Time <!-- local clock time of the game, HH:MM::SS format -->
+      :Termination <!-- abandoned, adjudication (3rd party), death, emergency, normal, rules infraction, time forfeit, or unterminated -->
+      :Mode <!-- OTB for over the board, ICS for Internet Chess Server -->
+      :FEN <!-- rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 -->
+    </header>
+    <div class="game-visual-presentation">
+      <h1 class="playing-white">:White</h1>
+      <div class="board">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+      <h1 class="playing-black">:Black</h1>
+    </div>
+    <div class="moves">
+      <div class="move">
+        :move-number
+        <div class="move-white">
+          :white-move
+        </div>
+        <div class="move-black">
+          :black-move
+        </div>
+        <div class="nag">
+          :Numeric-Annotation-Glyphs?
+        </div>
+        <div class="comments">
+          :Comments
+        </div>
+      </div>
+      <div class="move">
+        :move-number
+        <div class="move-white">
+          :white-move
+        </div>
+        <div class="move-black">
+          :black-move
+        </div>
+        <div class="nag">
+          :Numeric-Annotation-Glyphs?
+        </div>
+        <div class="comments">
+          :Comments
+        </div>
+      </div>
+      <div class="move">
+        :move-number
+        <div class="move-white">
+          :white-move
+        </div>
+        <div class="move-black">
+          :black-move
+        </div>
+        <div class="nag">
+          :Numeric-Annotation-Glyphs?
+        </div>
+        <div class="comments">
+          :Comments
+        </div>
+      </div>
+      <div class="move result">
+        :result? <!-- a result of * (ongoing) may be ommitted -->
+      </div>
     </div>
   </body>
 </html>

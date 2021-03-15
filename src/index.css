@@ -24,15 +24,31 @@ body {
   color: var(--foreground);
   font-family: var(--main-font-family);
   margin: auto;
-  padding: 5vw;
+  padding: 8vw 5vw 5vw 5vw;
+}
+
+header {
+  background-color: var(--current-line);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  padding: 1.6vw
+}
+
+.game-visual-presentation {
+  width: 88vw;
+  margin: 0 1vw;
+}
+
+.game-visual-presentation h1 {
+  margin: 0;
 }
 
 .board {
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 88vw;
   height: 88vw;
-  margin: 1vw;
 
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -53,4 +69,17 @@ body {
 .board div:nth-child(56) ~ div:nth-child(-2n+63) {
   background-color: var(--comment);
   color: var(--current-line);
+}
+
+.moves div {
+  display: inline-block;
+}
+
+.move {
+  background-color: var(--current-line);
+  padding: 1rem 1.6rem;
+}
+
+.move:nth-child(2n) {
+  background-color: var(--background);
 }

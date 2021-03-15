@@ -3,7 +3,7 @@
   "productName": "Juicer",
   "version": "0.0.1",
   "description": "a PGN based chess game annotation tool",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
