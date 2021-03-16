@@ -4,6 +4,10 @@ Juicer is a cross-platform, [Electron](http://electron.atom.io/)-based annotatio
 
 [Download links will be made available in the 'releases' tab when they are available](https://github.com/lonnen/juicer/releases)
 
+Juicer can currently load PGN files into memory but cannot display them. Here is a screenshot of the current pre-alpha developer preview:
+
+<img width="600" alt="Screen Shot 2021-03-14 showing varible names in place of actual game data" src="https://user-images.githubusercontent.com/21467/111281573-55a30f80-85fa-11eb-94f0-a847809df7ad.png">
+
 ## Development Setup
 
 ### Prerequisites
