@@ -55,6 +55,7 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "electron-window-state": "^5.0.3",
+    "htm": "^3.0.4",
     "preact": "^10.5.13"
   },
   "devDependencies": {
