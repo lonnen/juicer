@@ -2561,6 +2561,11 @@
     "xmlbuilder" "^9.0.7"
     "xmldom" "0.1.x"
 
+"preact@^10.5.13":
+  "integrity" "sha512-q/vlKIGNwzTLu+jCcvywgGrt+H/1P/oIRSD6mV4ln3hmlC+Aa34C7yfPI4+5bzW8pONyVXYS7SvXosy2dKKtWQ=="
+  "resolved" "https://registry.npmjs.org/preact/-/preact-10.5.13.tgz"
+  "version" "10.5.13"
+
 "prepend-http@^2.0.0":
   "integrity" "sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc="
   "resolved" "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
